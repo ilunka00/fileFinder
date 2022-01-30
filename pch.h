@@ -14,8 +14,8 @@
 class TestClass
 {
 public:
-	std::string helloWorld(std::string);
-	std::string helloWorld(std::string name, std::string path);
+	std::string fileFind(std::string);
+	std::string fileFind(std::string name, std::string path);
 	void testing();
 };
 

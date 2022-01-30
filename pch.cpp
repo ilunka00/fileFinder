@@ -1,6 +1,6 @@
 ﻿#include "pch.h"
 
-std::string TestClass::helloWorld(std::string name)
+std::string TestClass::fileFind(std::string name)
 {
     std::string result = "C:\\";
     WIN32_FIND_DATA file;
@@ -24,7 +24,7 @@ std::string TestClass::helloWorld(std::string name)
             result += test;
             result += "\\";
             
-            std::string tempResult = helloWorld(name, result);
+            std::string tempResult = fileFind(name, result);
             if (tempResult.find(name) != -1) return tempResult;
 
             result = temp;
@@ -37,7 +37,7 @@ std::string TestClass::helloWorld(std::string name)
     return "";
 }
 
-std::string TestClass::helloWorld(std::string name, std::string path)
+std::string TestClass::fileFind(std::string name, std::string path)
 {
     std::string result = path;
     result += "*";
@@ -64,7 +64,7 @@ std::string TestClass::helloWorld(std::string name, std::string path)
             path += test;
             path += "\\";
 
-            std::string tempResult = helloWorld(name, path);
+            std::string tempResult = fileFind(name, path);
 
             
             if (tempResult.find(name) != -1) return tempResult;
